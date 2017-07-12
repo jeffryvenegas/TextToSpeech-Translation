@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cr.ac.ucr.ecci.cql.mivoz.MainActivity">
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mi Voz!" />
+    <Button
+        android:id="@+id/buttonSpeechText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voz a texto"
+        android:layout_below="@+id/texto"/>
+    <Button
+        android:id="@+id/buttonTextSpeech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Texto a voz"
+        android:layout_below="@+id/buttonSpeechText"/>
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/buttonTextSpeech"
+        android:id="@+id/radioGroup">
+        <RadioButton
+            android:id="@+id/radioButtonIngles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="Inglés" />
+        <RadioButton
+            android:id="@+id/radioButtonEspannol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Español"
+            android:onClick="onRadioButtonClicked" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/radioGroup"
+        android:hint="Ingrese el texto"
+        />
+
+    <Button
+        android:id="@+id/buttonTranslate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="29dp"
+        android:text="Traducir" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/buttonTranslate"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Traducción:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/translationResult"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+</RelativeLayout>
